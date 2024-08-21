@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Module 7 Cloud, Mobile, IoT</title>
+</head><body><span style="font-size: 14pt">7.1 Attack Vectors on Cloud Technologies<br/>
+Infrastructure as a Service (IaaS)<br/>
+Platform as a Service (PaaS)<br/>
+Software as a Service (SaaS)<br/>
+<br/>
+7.1.3 Credential Harvesting<br/>
+<br/>
+<br/>
+<img src="image.png" width="600" height="335" /><br/>
+<br/>
+Step 1. Launch SET by entering the setoolkit command.<br/>
+Step 2. Select 1) Social-Engineering Attacks from the main menu.<br/>
+Step 3. Select 2) Website Attack Vectors.<br/>
+Step 4. Select 3) Credential Harvester Attack Method.<br/>
+Step 5. Select 1) Web Templates to use a predefined web template (Twitter).<br/>
+Step 6. In the menu shown in Example 7-5, enter the IP address of the host that you would like to use to harvest the user credentials (in this case, 192.168.88.225). In this example, SET has recognized the attacking system’s IP address. If this occurs for you, you can just press Enter to select the attacking system’s IP address.<br/>
+Step 7. Select 3. Twitter, as shown in Example 7-6.<br/>
+<br/>
+Figure 7-2 - Fake Login Page<br/>
+Example 7-7 - Harvesting the User Credentials on SET<br/>
+<br/>
+7.1.5 Privilege Escalation<br/>
+Vertical<br/>
+Horizontal<br/>
+<br/>
+7.1.6 Account Takeover<br/>
+Login location<br/>
+Failed login attempts<br/>
+Phising emails<br/>
+Malicious OAuth, SAML, or OpenID Connect connections<br/>
+Abnormal file sharing and downloading<br/>
+<br/>
+7.1.7 Metadata Service Attacks<br/>
+7.1.8 Attacks Against Misconfigured Cloud Assets<br/>
+Identity and Access Management (IAM) Implementations<br/>
+<br/>
+Federation Misconfigurations<br/>
+Object Storage<br/>
+Containerization Technologies<br/>
+<br/>
+7.1.9 Resource Exhaustion and DoS Attacks<br/>
+7.1.10 Cloud Malware Injection Attacks<br/>
+7.1.11 Side-Channel Attacks<br/>
+7.1.13 Tools and Software Development Kits (SDKs)<br/>
+<br/>
+--------------------------------------------------------------<br/>
+<br/>
+7.2 Common Attacks Against Specialized Systems<br/>
+<br/>
+7.2.2 Attacking Mobile Devices<br/>
+Reverse Engineering (https://mas.owasp.org/crackmes)<br/>
+Sandbox Analysis<br/>
+Spamming<br/>
+<br/>
+Common Vulnerabilities:<br/>
+Insecure storage<br/>
+Passcode and biometrics (https://github.com/OWASP/owasp-mastg/blob/master/Document/0x06f-Testing-Local-Authentication.md)<br/>
+Certificate pinning (https://github.com/nabla-c0d3/ssl-kill-switch2)<br/>
+Using known vulnerable components<br/>
+Root permission execution<br/>
+Business logic vulnerabiliites<br/>
+<br/>
+Common Tools:<br/>
+Burp Suite<br/>
+Drozer<br/>
+needle<br/>
+Mobile Security Framework (MobSF)<br/>
+Postman<br/>
+Ettercap<br/>
+Frida<br/>
+Objection<br/>
+Android SDK tools<br/>
+ApkX<br/>
+APK Studio<br/>
+<br/>
+7.2.5 Attacking Internet of Things (IoT) Devices<br/>
+7.2.6 Analyzing IoT Protocols<br/>
+Wi-Fi<br/>
+Bluetooth and Bluetooth Low Energy (BLE)<br/>
+Zigbee<br/>
+Z-Wave<br/>
+LoraWAN<br/>
+Insteon<br/>
+Modbus<br/>
+Siemens S7comm (S7 Communication)<br/>
+<br/>
+BLE:<br/>
+Phase 1. Pairing feature exchange<br/>
+Phase 2. Short-term key generation<br/>
+Phase 3. Transport-specific key distribution<br/>
+<br/>
+7.2.8 IoT Security Special Considerations<br/>
+Fragile Environment (low compute resources)<br/>
+Availability Concerns (DoS)<br/>
+Data Corruption (input vulnerability)<br/>
+Data Exfiltration<br/>
+<br/>
+7.2.9 Common IoT Vulnerabilities<br/>
+Insecure defaults<br/>
+Plaintext communication<br/>
+Hard-coded configuration<br/>
+Outdated firmware/hardware<br/>
+<br/>
+7.2.11 Data Storage System Vulnerabilities<br/>
+IoT Architecture Layers<br/>
+<br/>
+<img src="image 2.png" width="650" height="375" /><br/>
+<br/>
+IoT Misconfigurations:<br/>
+Default/blank username/password<br/>
+Network exposure<br/>
+Lack of input sanitization<br/>
+Software and injection vulnerabilities<br/>
+Error messages and debug handling<br/>
+<br/>
+7.2.12 Management Interface Vulnerabilities<br/>
+Intelligent Platform Management Interface (IPMI)<br/>
+<br/>
+7.2.14 Exploiting Virtual Machines<br/>
+VM escape vulnerabilities&#09;<br/>
+Hyperjacking<br/>
+VM repository vulnerabilities<br/>
+<br/>
+7.2.15 Vulnerabilities Related to Containerized Workloads<br/>
+Computing Evolution<br/>
+<img src="image 3.png" width="650" height="284" /><br/>
+Securing Container Images<br/>
+<img src="image 4.png" width="650" height="217" /><br/>
+<br/>
+Docker Image Vulnerabilities Scanner:<br/>
+Anchore’s Grype<br/>
+Clair<br/>
+Dagda<br/>
+kube-bench<br/>
+kube-hunter<br/>
+Falco<br/>
+<br/>
+--------------------------------------------------------------<br/>
+<br/>
+7.3.1 What Did I Learn in this Module?<br/>
+Cloud Technologies:<br/>
+Credential Harvesting<br/>
+Privilege Escalation<br/>
+Account Takeover<br/>
+Metadata Service Attacks<br/>
+<br/>
+Attacks Against Misconfigured Cloud Assets:<br/>
+IAM Implementations<br/>
+Federation Misconfigurations<br/>
+Object Storage<br/>
+Containerization Technologies<br/>
+<br/>
+Cloud Malware Injection Attacks<br/>
+Side-Channel Attacks<br/>
+<br/>
+Attacking Mobile Devices:<br/>
+Insecure storage<br/>
+Passcode vulnerabilities<br/>
+Certificate pinning<br/>
+Usage of known vulnerable components<br/>
+Execution of activities using root<br/>
+Business logic vulnerabilities<br/>
+<br/>
+Attacking Internet of Things (IoT) Devices:<br/>
+Data Storage System Vulnerabilities<br/>
+Management Interface Vulnerabilities<br/>
+Exploiting Virtual Machines<br/>
+<br/>
+Exploiting Virtual Machines:<br/>
+VM escape vulnerabilities<br/>
+Hyperjacking<br/>
+VM repository vulnerabilities<br/>
+<br/>
+Vulnerabilities Related to Containerized Workloads<br/>
+<br/>
+&lt;END&gt;</span></body></html>

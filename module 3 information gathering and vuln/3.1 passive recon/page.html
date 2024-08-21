@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>3.1 Passive Recon</title>
+</head><body><tt><span style="font-size: 12pt">COMMANDS USED:<br/>
+└─$ dnsrecon -d h4cker.org<br/>
+└─$ dig h4cker.org mx<br/>
+└─$ whois h4cker.org<br/>
+└─$ whois cisco.com | grep '@cisco.com'<br/>
+└─$ nslookup<br/>
+&gt; cisco.com<br/>
+<br/>
+<b>3.1.2 Active Reconnaissance vs. Passive Reconnaissance</b><br/>
+<br/>
+# Active Recon<br/>
+Host enumeration<br/>
+Network enumeration<br/>
+User enumeration<br/>
+Group enumeration<br/>
+Network share enumeration<br/>
+Web page enumeration<br/>
+Application enumeration<br/>
+Service enumeration<br/>
+Packet crafting<br/>
+<br/>
+# Passive Recon<br/>
+Domain enumeration<br/>
+Packet inspection<br/>
+Open-source intelligence (OSINT)<br/>
+Recon-ng<br/>
+Eavesdropping<br/>
+<br/>
+<b>3.1.4 Lab - Using OSINT Tools </b>(is on a seperated page)<br/>
+<br/>
+<b>3.1.5 DNS Lookups<br/>
+</b><br/>
+└─$ dnsrecon -d h4cker.org<br/>
+# Discover available hosts<br/>
+<br/>
+└─$ dig h4cker.org mx<br/>
+# Obtain informations, also get email servers from MX record<br/>
+<br/>
+└─$ whois h4cker.org<br/>
+# Obtain administrative and technical contacts<br/>
+<br/>
+└─$ whois cisco.com | grep '@cisco.com'<br/>
+# filter emails with "@cisco.com"<br/>
+<br/>
+<b>3.1.9 Lab - DNS Lookups</b><br/>
+<br/>
+└─$ nslookup cisco.com<br/>
+# Use DNS server to look for available IP Addresses<br/>
+<br/>
+└─$ nslookup skillsforall.com 8.8.8.8<br/>
+# Look for available IP Addresses using Google DNS Server<br/>
+<br/>
+└─$ dig -x 72.163.5.201<br/>
+# Reverse DNS lookup<br/>
+<br/>
+└─$ dig cisco.com 8.8.8.8 ns<br/>
+<br/>
+<b>3.1.10 Cloud vs Self-Hosted Applications and Related Subdomains</b><br/>
+<br/>
+└─$ host netflix.com<br/>
+# look for available IP addresses<br/>
+<br/>
+└─$ whois 3.230.129.93 | grep OrgName<br/>
+# find organization name in the server<br/>
+<br/>
+<b>3.1.11 Social Media Scraping</b><br/>
+<br/>
+Social medias to gather informations.<br/>
+Example: Attacker create a job post and an interview. Attacker gather informations from the candidate regarding their role in their company. Taking advantage of them wanting to "show off".<br/>
+<br/>
+<b>3.1.13 Cryptographic Flaws</b><br/>
+<br/>
+Attacker inspect source and find digital certificate. Digital certificate reveals many informations regarding the website<br/>
+crt.sh also reveals many subdomains.<br/>
+<br/>
+<b>3.1.14 Lab - Finding Information from SSL Certificates</b><br/>
+<br/>
+└─$ sslscan skillsforall.com | aha &gt; sfa_cert.html<br/>
+# sslscan: output information from skiilsforall.com<br/>
+# aha: convert terminal output into html file<br/>
+<br/>
+<b>3.1.15 Company Reputation and Security Posture</b><br/>
+<br/>
+└─$ pip3 install h8mail<br/>
+# look for breach data dumps<br/>
+<ul><li>WhatBreach: <i><a href="https://github.com/Ekultek/WhatBreach">https://github.com/Ekultek/WhatBreach</a></i></li>
+<li>LeakLooker: <i><a href="https://github.com/woj-ciech/LeakLooker">https://github.com/woj-ciech/LeakLooker</a></i></li>
+<li>Buster: <i><a href="https://github.com/sham00n/buster">https://github.com/sham00n/buster</a></i></li>
+<li>Scavenger: <i><a href="https://github.com/rndinfosecguy/Scavenger">https://github.com/rndinfosecguy/Scavenger</a></i></li>
+<li>PwnDB: <i><a href="https://github.com/davidtavarez/pwndb">https://github.com/davidtavarez/pwndb</a></i></li>
+</ul>
+<br/>
+└─$ exiftool IMG_4730.jpg<br/>
+# look file metadata<br/>
+<br/>
+Google dorks: entry examples<br/>
+https://www.exploit-db.com/google-hacking-database<br/>
+<br/>
+Public source code repositories<br/>
+Find information of apps that uses open-source softwares<br/>
+<br/>
+Email addresses breaches:<br/>
+haveibeenpwned.com<br/>
+f-secure.com<br/>
+hacknotice.com<br/>
+breachdirectory.com<br/>
+keepersecurity.com<br/>
+<br/>
+<b>3.1.20 Open-Source Intelligence (OSINT) Gathering</b><br/>
+<br/>
+shodan.io<br/>
+# look for vulnurable stuff<br/>
+<br/>
+<br/>
+<br/>
+&lt;end&gt;</span></tt></body></html>

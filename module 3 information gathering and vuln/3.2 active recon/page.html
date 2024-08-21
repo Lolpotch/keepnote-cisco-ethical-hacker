@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>3.2 Active Recon</title>
+</head><body><tt><b><span style="font-size: 14pt">3.2.2 Nmap Scan Types</span></b><span style="font-size: 12pt"><br/>
+</span><span style="font-size: 12pt">TCP Connect Scan (-sT)<br/>
+UDP Scan (-sU)<br/>
+TCP FIN Scan (-sF)<br/>
+Host Discovery Scan (-sn)<br/>
+Timing Options (-T 0-5)<br/>
+<br/>
+<b>TCP Connect Scan ( -sT )</b><br/>
+nmap -sT 192.168.88.251<br/>
+<img src="image.png" width="599" height="250" /><br/>
+<br/>
+<b>UDP Scan ( -sU )</b><br/>
+nmap -sU -p 53 192.168.88.251<br/>
+<img src="image 2.png" width="497" height="150" /><br/>
+<br/>
+<b>TCP FIN Scan ( -sF )</b><br/>
+nmap -sF -p 80 192.168.88.251<br/>
+<img src="image 3.png" width="587" height="200" /><br/>
+<img src="image 4.png" width="581" height="200" /><br/>
+<br/>
+<b>Host Discovery Scan ( -sn )</b><br/>
+nmap -sn 192.168.88.0/24<br/>
+<br/>
+<b>Timing Options ( -T 0-5 )</b><br/>
+-T0 (Paranoid) : Very slow, used for IDS evasion<br/>
+-T1 (Sneaky) : Quite slow, used for IDS evasion<br/>
+-T2 (Polite) : Slows down to consume less bandwidth, runs about 10 times slower than the default<br/>
+-T3 (Normal) : Default, a dynamic timing model based on target responsiveness<br/>
+-T4 (Aggressive) : Assumes a fast and reliable network and may overwhelm targets<br/>
+-T5 (Insane) : Very aggressive; will likely overwhelm targets or miss open ports<br/>
+<br/>
+<br/>
+<br/>
+<img src="image 5.png" width="600" height="235" /><br/>
+<br/>
+</span><span style="font-size: 14pt"><b>3.2.4 Types of Enumeration</b></span><span style="font-size: 12pt"><br/>
+</span><span style="font-size: 12pt">Host Enumeration<br/>
+User Enumeration<br/>
+Group Enumeration<br/>
+Network Share Enumeration<br/>
+Additional SMB Enumeration Examples<br/>
+Web Page Enumeration/Web Application Enumeration<br/>
+Service Enumeration<br/>
+Exploring Enumeration via Packet Crafting<br/>
+<br/>
+<b>Host Enumeration</b><br/>
+nmap -sP 192.168.88.0/24.<br/>
+<br/>
+<b>User Enumeration</b><br/>
+nmap &nbsp;--script smb-enum-users.nse 192.168.88.251<br/>
+<br/>
+<b>Group Enumeration</b><br/>
+nmap --script smb-enum-groups.nse --script-args smbusername=vagrant,smbpass=vagrant 192.168.56.3<br/>
+<br/>
+<b>Network Share Enumeration</b><br/>
+nmap --script smb-enum-shares.nse -p 445 192.168.88.251<br/>
+<br/>
+<b>Additional SMB Enumeration Examples</b><br/>
+nmap -sC 192.168.88.251<br/>
+<br/>
+<b>Enumerating Additional Information Using enum4linux</b><br/>
+enum4linux 192.168.88.251<br/>
+<br/>
+<b>Web Page Enumeration/Web Application Enumeration</b><br/>
+nmap -sV --script=http-enum -p 80 192.168.88.251<br/>
+<br/>
+<b>Nikto scan</b><br/>
+nikto -h 192.168.88.251<br/>
+<br/>
+<b>Service Enumeration</b><br/>
+nmap --script smb-enum-processes.nse --script-args smbusername=&lt;username&gt;, smbpass=&lt;password&gt; -p445 &lt;host&gt;<br/>
+<br/>
+</span><b><span style="font-size: 14pt">3.2.6 Lab - Enumeration with Nmap</span></b><span style="font-size: 12pt"><br/>
+</span><span style="font-size: 12pt"><br/>
+<b>Part 2: Perform Basic Nmap Scans</b><br/>
+<br/>
+<b>Step 1: Initiate a basic Nmap scan of the target computer.</b><br/>
+└─$ nmap -sn 10.6.6.0/24<br/>
+# discovery scan<br/>
+<br/>
+└─$ nmap 10.6.6.23 <br/>
+# basic scan<br/>
+<br/>
+└─$ sudo nmap -O 10.6.6.23<br/>
+# operating system info<br/>
+<br/>
+<b>Step 2: Obtain additional information about the host and services.</b><br/>
+└─$ nmap -v -p21 -sV -T4 10.6.6.23<br/>
+# port FTP version info, T4 is faster scan<br/>
+<br/>
+└─$ nmap -p21 -sV -A 10.6.6.23<br/>
+# scan detailed information, very intrusive<br/>
+<br/>
+</span><span style="font-size: 16pt"><b>3.2.9 Lab - Packet Crafting with Scapy</b></span><span style="font-size: 12pt"><br/>
+</span><span style="font-size: 12pt">Install and run Scapy in Kali Linux<br/>
+Ping cisco.com and sniff the sent packages using Scapy<br/>
+Create and Send an ICMP Packet.<br/>
+Create and Send TCP SYN Packets.<br/>
+<br/>
+</span><b><span style="font-size: 16pt">3.2.10 Lab - Network Sniffing with Wireshark</span></b><span style="font-size: 12pt"><br/>
+</span><span style="font-size: 12pt">Run tcpdump in kali (special command)<br/>
+Open browser, google.com<br/>
+Open skillsforall.com, login to ur account<br/>
+stop tcpdump. Inspect the outputted file w/ Wireshark<br/>
+Filter DNS packet<br/>
+<br/>
+Run Wireshark<br/>
+Run Metasploitable &gt; DVWA<br/>
+Login &gt; Instruction<br/>
+Stop wireshark scan<br/>
+Inspect HTTP, username password in it, and PHPSESSID<br/>
+<br/>
+&lt;end&gt;</span></tt></body></html>

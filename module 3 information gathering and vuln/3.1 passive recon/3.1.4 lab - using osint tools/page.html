@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>3.1.4 Lab - Using OSINT Tools</title>
+</head><body><tt><b><span style="font-size: 16pt">3.1.4 Lab - Using OSINT Tools</span></b><span style="font-size: 12pt"><br/>
+</span><span style="font-size: 12pt"><br/>
+</span><span style="font-size: 14pt"><b>PART 1: OSINT RESOURCES</b></span><span style="font-size: 12pt"><br/>
+</span><span style="font-size: 12pt"><br/>
+# List of free OSINT tools<br/>
+https://osintframework.com <br/>
+https://www.osintcombine.com/free-tools<br/>
+https://whatsmyname.app<br/>
+https://smart.myosint.training/<br/>
+<br/>
+</span><span style="font-size: 14pt"><b>PART 2: SPIDERFOOT</b></span><span style="font-size: 12pt"><br/>
+</span><span style="font-size: 12pt"><br/>
+└─$ spiderfoot -l 127.0.0.1:5001<br/>
+# Run spidefoot, open browser as guided to see the GUI.<br/>
+<br/>
+└─$ spiderfoot -M | grep sfp_acc<br/>
+# List spiderfoot modules, filter modules with name include "sfp_acc".<br/>
+<br/>
+</span><span style="font-size: 14pt"><b>PART 3: RECON-NG</b></span><span style="font-size: 12pt"><br/>
+</span><span style="font-size: 12pt"><b>STEP 1: CREATE A WORKSPACE</b><br/>
+<br/>
+└─$ recon-ng<br/>
+# Starts recon-ng engine.<br/>
+<br/>
+Usage: workspaces &lt;create|list|load|remove&gt; [...]<br/>
+&#09;<br/>
+[recon-ng][default] &gt; workspaces list<br/>
+# Show list of workspaces in recon-ng.<br/>
+<br/>
+[recon-ng][default] &gt; workspaces create cisco<br/>
+# Create a workspace named "cisco"<br/>
+<br/>
+<b>STEP 2&amp;3: INVESTIGATE MODULES</b><br/>
+<br/>
+[recon-ng][cisco] &gt; marketplace search<br/>
+# Show list of marketplace.<br/>
+<br/>
+[recon-ng][cisco] &gt; marketplace info &lt;module-path&gt;<br/>
+# More info on the module.<br/>
+<br/>
+<b>STEP 4&amp;5: INSTALL &amp; RUN MODULES</b><br/>
+<br/>
+[recon-ng][cisco] &gt; marketplace install recon/domains-hosts/hackertarget<br/>
+# Install the module.<br/>
+<br/>
+[recon-ng][cisco] &gt; modules load hackertarget<br/>
+# Load the module.<br/>
+<br/>
+[recon-ng][cisco][hackertarget] &gt; info<br/>
+# Shows module's name, version, developer, brief desc., and options.<br/>
+<br/>
+Usage: options set &lt;option&gt; &lt;value&gt;<br/>
+<br/>
+[recon-ng][cisco][hackertarget] &gt; options set source hackxor.net<br/>
+# "options set" = command<br/>
+# "source" = option<br/>
+# "hackxor.net" = target<br/>
+<br/>
+# Run info command again to verify the option update.<br/>
+<br/>
+[recon-ng][cisco][hackertarget] &gt; run<br/>
+# Runs the module.<br/>
+<br/>
+[recon-ng][cisco][hackertarget] &gt; dashboard<br/>
+# Shows the gathered information<br/>
+<br/>
+Usage: show &lt;companies|contacts|credentials|domains|hosts|leaks|locations|netblocks|ports|profiles|pushpins|repositories|vulnerabilities&gt;<br/>
+<br/>
+[recon-ng][cisco][hackertarget] &gt; show hosts<br/>
+# Show discovered hosts (subdomains)<br/>
+<br/>
+<b>STEP 6: RECON-NG WEB INTERFACE</b><br/>
+<br/>
+└─$ recon-web<br/>
+# Show results in GUI via browse<br/>
+<br/>
+</span><span style="font-size: 14pt"><b>PART 4: FIND INTERESTING FILES W/ RECON-NG</b></span><span style="font-size: 12pt"><br/>
+</span><span style="font-size: 12pt"><br/>
+[recon-ng][default] &gt; marketplace install discovery/info_disclosure/interesting_files<ul><li style="list-style-type: none"></li>
+</ul>
+[recon-ng][cisco][interesting_files] &gt; run<br/>
+[*] Files downloaded to '/home/lolpotch/.recon-ng/workspaces/cisco/'<br/>
+<br/>
+<br/>
+<br/>
+&lt;end&gt;</span></tt></body></html>
